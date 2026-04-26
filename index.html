@@ -15,14 +15,14 @@
     <meta property="og:description" content="We find the exact dollar amount your DTC brand is leaving behind in email revenue — and build the system to recover it." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://retention-ops.com" />
-    <meta property="og:image" content="https://retention-ops.com/og-logo.jpg" />
+    <meta property="og:image" content="https://retention-ops.com/og-image.png" />
     <meta property="og:site_name" content="RetentionOps" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="RetentionOps — Email Revenue Recovery for DTC Brands" />
     <meta name="twitter:description" content="We find the exact dollar amount your DTC brand is leaving behind in email revenue — and build the system to recover it." />
-    <meta name="twitter:image" content="https://retention-ops.com/og-logo.jpg" />
+    <meta name="twitter:image" content="https://retention-ops.com/og-image.png" />
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -33,6 +33,7 @@
             "description": "DTC email revenue recovery specialists. We audit, diagnose, and build email retention systems for direct-to-consumer brands.",
             "url": "https://retention-ops.com",
             "email": "dot@retention-ops.com",
+            "telephone": "+1-832-989-2991",
             "areaServed": "Worldwide",
             "knowsAbout": [
                 "Email Marketing Automation",
@@ -45,7 +46,7 @@
             ],
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "Email Revenue Audit",
+                "name": "Email Revenue Audit & Discovery Call",
                 "itemListElement": [{
                     "@type": "Offer",
                     "name": "Free Email Revenue Audit",
@@ -62,7 +63,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
 
     <style>
-        /* ───── TOKENS ───── */
+        /* ───── DARK THEME TOKENS (PERMANENT) ───── */
         :root {
             --amber: #F0A500;
             --amber-deep: #d49200;
@@ -91,25 +92,6 @@
             --shadow-elevated: 0 2px 4px rgba(0, 0, 0, 0.5), 0 8px 32px rgba(0, 0, 0, 0.4);
             --shadow-amber: 0 8px 32px rgba(240, 165, 0, 0.2);
         }
-        [data-theme="light"] {
-            --bg: #f9f7f1;
-            --bg-card: #f0ede4;
-            --bg-card2: #e9e5da;
-            --bg-elevated: #e0dcd0;
-            --surface: #d8d4c8;
-            --surface-hover: #cfcbbf;
-            --text: #111;
-            --text-muted: #5a5a5a;
-            --text-subtle: #999;
-            --border: rgba(0, 0, 0, 0.07);
-            --border-strong: rgba(0, 0, 0, 0.11);
-            --amber-glow: rgba(240, 165, 0, 0.05);
-            --amber-glow-strong: rgba(240, 165, 0, 0.12);
-            --amber-dim: rgba(240, 165, 0, 0.08);
-            --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.06);
-            --shadow-elevated: 0 2px 4px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.08);
-            --shadow-amber: 0 8px 28px rgba(240, 165, 0, 0.18);
-        }
 
         /* ───── RESET ───── */
         *,
@@ -126,7 +108,6 @@
             font-family: 'Outfit', sans-serif;
             background: var(--bg);
             color: var(--text);
-            transition: background 0.45s var(--ease), color 0.45s var(--ease);
             overflow-x: hidden;
             line-height: 1.65;
             -webkit-font-smoothing: antialiased;
@@ -161,7 +142,7 @@
             border: 0;
         }
 
-        /* ───── NAV ───── */
+        /* ───── NAV (NO THEME TOGGLE) ───── */
         nav {
             position: fixed;
             top: 0;
@@ -179,9 +160,6 @@
             backdrop-filter: blur(22px);
             -webkit-backdrop-filter: blur(22px);
             box-shadow: 0 1px 0 var(--border);
-        }
-        [data-theme="light"] nav.scrolled {
-            background: rgba(249, 247, 241, 0.82);
         }
         .nav-left {
             display: flex;
@@ -240,11 +218,11 @@
             align-items: center;
             gap: 0.5rem;
         }
-        .nav-logo-icon {
+        .nav-logo img {
             width: 34px;
             height: 34px;
-            flex-shrink: 0;
             object-fit: contain;
+            flex-shrink: 0;
         }
         .nav-logo-text {
             font-family: 'Syne', sans-serif;
@@ -257,22 +235,6 @@
         .nav-logo-text em {
             color: var(--amber);
             font-style: normal;
-        }
-
-        /* theme toggle */
-        .theme-btn {
-            width: 38px;
-            height: 38px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text);
-            transition: color 0.2s, background 0.2s;
-            border-radius: 50%;
-        }
-        .theme-btn:hover {
-            color: var(--amber);
-            background: var(--amber-dim);
         }
 
         /* ───── SIDEBAR ───── */
@@ -307,9 +269,6 @@
             box-shadow: var(--shadow-elevated);
             overflow-y: auto;
             overflow-x: hidden;
-        }
-        [data-theme="light"] .sidebar {
-            background: #f0ede4;
         }
         .sidebar.open {
             transform: translateX(0);
@@ -479,7 +438,6 @@
             font-family: 'Syne', sans-serif;
         }
 
-        /* Highlighted text in headings */
         .hl {
             color: var(--amber);
             position: relative;
@@ -543,11 +501,6 @@
             position: relative;
             overflow: hidden;
         }
-        @media (max-width: 600px) {
-            #home {
-                padding: 7rem 1.25rem 4rem;
-            }
-        }
         .hero-glow {
             position: absolute;
             inset: 0;
@@ -578,7 +531,6 @@
             position: relative;
             z-index: 1;
         }
-
         .hero-eyebrow {
             font-size: 0.7rem;
             letter-spacing: 0.28em;
@@ -602,7 +554,6 @@
         h1 .bl {
             display: block;
         }
-
         .hero-sub {
             font-size: 1rem;
             color: var(--text-muted);
@@ -653,10 +604,6 @@
             flex-wrap: wrap;
             margin-top: 2rem;
         }
-        .stars {
-            display: flex;
-            gap: 2px;
-        }
         .stars span {
             color: var(--amber);
             font-size: 0.9rem;
@@ -664,7 +611,6 @@
         .trust-t {
             font-size: 0.78rem;
             color: var(--text-subtle);
-            font-weight: 400;
         }
         .trust-dot {
             font-size: 0.5rem;
@@ -672,7 +618,6 @@
             opacity: 0.5;
         }
 
-        /* ───── SECTION DIVIDER ACCENT ───── */
         .section-accent {
             width: 48px;
             height: 3px;
@@ -682,16 +627,14 @@
             margin-bottom: 2.8rem;
         }
 
-        /* ───── THE GAP ───── */
+        /* ───── GAP / BUILD / PROCESS (same as before) ───── */
         #gap {
             background: var(--bg);
         }
-
         .gap-list {
             margin-top: 2.8rem;
             display: flex;
             flex-direction: column;
-            gap: 0;
         }
         .gap-item {
             display: flex;
@@ -699,7 +642,6 @@
             gap: 1.4rem;
             padding: 2rem 0;
             border-bottom: 1px solid var(--border);
-            transition: background 0.3s;
         }
         .gap-item:first-child {
             border-top: 1px solid var(--border);
@@ -721,11 +663,9 @@
             transform: scale(1.06);
         }
         .gap-item h3 {
-            font-family: 'Syne', sans-serif;
             font-size: 1.05rem;
             font-weight: 700;
             margin-bottom: 0.35rem;
-            letter-spacing: -0.01em;
         }
         .gap-item p {
             font-size: 0.9rem;
@@ -733,7 +673,6 @@
             line-height: 1.8;
             max-width: 520px;
         }
-
         .gap-quote {
             margin-top: 2.8rem;
             border-left: 3px solid var(--amber);
@@ -761,18 +700,12 @@
             pointer-events: none;
         }
 
-        /* ───── WHAT WE BUILD ───── */
         #build {
             background: var(--bg-card);
         }
         #build h2 {
             line-height: 1.2;
         }
-        #build h2 .hl {
-            font-weight: 800;
-            letter-spacing: 0.01em;
-        }
-
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -787,10 +720,6 @@
             background: var(--bg-card2);
             padding: 2.4rem 1.8rem;
             text-align: center;
-            transition: background 0.3s;
-        }
-        .stat-cell:hover {
-            background: var(--bg-elevated);
         }
         .stat-n {
             font-family: 'Bebas Neue', sans-serif;
@@ -809,7 +738,6 @@
             display: block;
             font-weight: 500;
         }
-
         .flows {
             margin-top: 2.8rem;
             display: flex;
@@ -837,27 +765,17 @@
             background: var(--amber);
             border-radius: 50%;
             flex-shrink: 0;
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-        .flow-row:hover .flow-dot {
-            transform: scale(1.6);
-            box-shadow: 0 0 10px rgba(240, 165, 0, 0.5);
         }
 
-        /* ───── HOW IT WORKS ───── */
         #process {
             background: var(--bg);
         }
-
         .steps {
             margin-top: 2.8rem;
-            display: flex;
-            flex-direction: column;
         }
         .step {
             display: flex;
             gap: 1.6rem;
-            position: relative;
         }
         .step-col {
             display: flex;
@@ -877,12 +795,6 @@
             font-size: 1.1rem;
             color: var(--amber);
             flex-shrink: 0;
-            transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
-        }
-        .step:hover .step-num {
-            border-color: var(--amber);
-            background: var(--amber-dim);
-            box-shadow: 0 0 0 8px var(--amber-glow);
         }
         .step-line {
             width: 1.5px;
@@ -899,24 +811,20 @@
             padding: 0.6rem 0 2.6rem;
         }
         .step-body h3 {
-            font-family: 'Syne', sans-serif;
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 0.4rem;
-            letter-spacing: -0.01em;
         }
         .step-body p {
             font-size: 0.9rem;
             color: var(--text-muted);
             line-height: 1.8;
-            max-width: 500px;
         }
 
-        /* ───── BOOK US ───── */
+        /* ───── DISCOVERY CALL SECTION ───── */
         #book {
             background: var(--bg-card);
         }
-
         .book-card {
             border: 1px solid var(--border-strong);
             border-radius: var(--radius-xl);
@@ -951,17 +859,16 @@
             margin-left: auto;
             margin-right: auto;
         }
-
-        .scarcity {
+        .calendly-note {
             margin-top: 1.4rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.55rem;
             font-size: 0.78rem;
             color: var(--amber);
             font-weight: 500;
             letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
         .sc-dot {
             width: 8px;
@@ -990,28 +897,28 @@
             text-align: center;
             background: var(--bg);
         }
-        .foot-logo {
-            margin-bottom: 1.2rem;
-            display: flex;
-            justify-content: center;
-        }
         .foot-logo img {
             height: 32px;
             width: auto;
             opacity: 0.85;
             object-fit: contain;
+            margin-bottom: 1.2rem;
         }
-        .foot-email {
+        .foot-contact {
             font-size: 0.86rem;
             color: var(--text-muted);
             margin-bottom: 0.7rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem 1rem;
         }
-        .foot-email a {
+        .foot-contact a {
             color: var(--amber);
-            transition: color 0.2s;
             font-weight: 500;
         }
-        .foot-email a:hover {
+        .foot-contact a:hover {
             color: #fbb820;
         }
         .foot-credit {
@@ -1020,13 +927,12 @@
         }
         .foot-credit a {
             color: var(--text-muted);
-            transition: color 0.2s;
         }
         .foot-credit a:hover {
             color: var(--amber);
         }
 
-        /* ───── MODAL ───── */
+        /* ───── MODAL (AUDIT FORM) ───── */
         .modal-bg {
             position: fixed;
             inset: 0;
@@ -1072,7 +978,6 @@
             font-weight: 800;
             font-size: 1.4rem;
             margin-bottom: 0.4rem;
-            letter-spacing: -0.01em;
         }
         .modal-sub {
             font-size: 0.86rem;
@@ -1121,8 +1026,6 @@
             background: var(--bg-card);
             color: var(--text);
         }
-
-        /* Radio group */
         .radio-group {
             display: flex;
             gap: 1.5rem;
@@ -1150,11 +1053,6 @@
             box-shadow: none;
             background: transparent;
         }
-        .radio-group input[type="radio"]:focus {
-            box-shadow: 0 0 0 4px var(--amber-glow);
-        }
-
-        /* Hidden field for "Other" */
         .field-other {
             display: none;
             animation: fadeSlideIn 0.3s var(--ease);
@@ -1172,26 +1070,16 @@
                 transform: translateY(0);
             }
         }
-
-        .modal-note {
-            text-align: center;
-            font-size: 0.73rem;
-            color: var(--text-subtle);
-            margin-top: 1rem;
-        }
         .form-footnote {
             text-align: center;
             font-size: 0.72rem;
             color: var(--text-subtle);
             margin-top: 0.7rem;
-            letter-spacing: 0.02em;
         }
         .btn-full {
             width: 100%;
             justify-content: center;
         }
-
-        /* Success state */
         .form-success {
             display: none;
             text-align: center;
@@ -1219,9 +1107,6 @@
             color: var(--text-muted);
             line-height: 1.7;
         }
-        .form-fields-wrap {
-            transition: opacity 0.3s;
-        }
         .form-fields-wrap.hidden {
             display: none;
         }
@@ -1236,21 +1121,10 @@
                 <span></span><span></span><span></span>
             </button>
             <div class="nav-logo">
-                <img src="logo.jpg" alt="RetentionOps logo" class="nav-logo-icon" width="34" height="34" />
+                <img src="logo.jpg" alt="RetentionOps logo" width="34" height="34" />
                 <span class="nav-logo-text">Retention<em>Ops</em></span>
             </div>
         </div>
-        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
-            <svg id="sunIco" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-            </svg>
-            <svg id="moonIco" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-        </button>
     </nav>
 
     <!-- ══ SIDEBAR ══ -->
@@ -1266,39 +1140,15 @@
             </button>
         </div>
         <ul class="sb-nav">
-            <li>
-                <a href="#home" class="sb-link">
-                    <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="#gap" class="sb-link">
-                    <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>
-                    The Gap
-                </a>
-            </li>
-            <li>
-                <a href="#build" class="sb-link">
-                    <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></span>
-                    What We Build
-                </a>
-            </li>
-            <li>
-                <a href="#process" class="sb-link">
-                    <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></span>
-                    How It Works
-                </a>
-            </li>
-            <li>
-                <a href="#book" class="sb-link">
-                    <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
-                    Book Us
-                </a>
-            </li>
+            <li><a href="#home" class="sb-link"><span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>Home</a></li>
+            <li><a href="#gap" class="sb-link"><span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>The Gap</a></li>
+            <li><a href="#build" class="sb-link"><span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></span>What We Build</a></li>
+            <li><a href="#process" class="sb-link"><span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></span>How It Works</a></li>
+            <li><a href="#book" class="sb-link"><span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>Book A Call</a></li>
         </ul>
         <div class="sidebar-footer">
-            <a href="mailto:dot@retention-ops.com">Contact Our Team</a>
+            <a href="mailto:dot@retention-ops.com">Email</a>
+            <a href="tel:+18329892991">Phone</a>
             <p class="sb-tagline">DTC Email Revenue Specialists</p>
         </div>
     </aside>
@@ -1309,7 +1159,6 @@
         <div class="hero-glow-2"></div>
         <div class="hero-grid"></div>
         <div class="wrap hero-inner">
-            <!-- No logo here – keeping only the header/footer logo as requested -->
             <span class="hero-eyebrow rv">RetentionOps — DTC Email Revenue Specialists</span>
             <h1 class="rv d1">
                 <span class="bl">Your DTC Brand</span>
@@ -1318,14 +1167,12 @@
                 <span class="bl">/Year Behind.</span>
             </h1>
             <p class="hero-sub rv d2">We find the exact dollar amount. We build the system to recover it. Most brands see first results within 21 days.</p>
-            <button class="btn-prime rv d3" id="heroBtn" aria-label="Book your free revenue audit">
+            <button class="btn-prime rv d3" id="heroBtn" aria-label="Get your free revenue audit">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                Book Your Free Revenue Audit
+                Get Your Free Revenue Audit
             </button>
             <div class="trust rv d4">
-                <div class="stars">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                </div>
+                <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                 <span class="trust-t">Trusted by DTC founders</span>
                 <span class="trust-dot">•</span>
                 <span class="trust-t">Klaviyo Specialists</span>
@@ -1341,39 +1188,16 @@
             <div class="section-accent rv d1"></div>
             <div class="gap-list">
                 <div class="gap-item rv d1">
-                    <div class="gap-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3>Missing Revenue Flows</h3>
-                        <p>No abandoned cart, no post-purchase, no win-back — money leaking every single day with zero recovery system in place.</p>
-                    </div>
+                    <div class="gap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                    <div><h3>Missing Revenue Flows</h3><p>No abandoned cart, no post-purchase, no win-back — money leaking every single day with zero recovery system in place.</p></div>
                 </div>
                 <div class="gap-item rv d2">
-                    <div class="gap-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3>Zero Segmentation</h3>
-                        <p>Sending the same email to every subscriber destroys deliverability, open rates, and your revenue ceiling.</p>
-                    </div>
+                    <div class="gap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                    <div><h3>Zero Segmentation</h3><p>Sending the same email to every subscriber destroys deliverability, open rates, and your revenue ceiling.</p></div>
                 </div>
                 <div class="gap-item rv d3">
-                    <div class="gap-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                            <polyline points="17 6 23 6 23 12"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3>One-Time Buyers</h3>
-                        <p>Customers buy once and disappear because there's no retention system engineered to pull them back.</p>
-                    </div>
+                    <div class="gap-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+                    <div><h3>One-Time Buyers</h3><p>Customers buy once and disappear because there's no retention system engineered to pull them back.</p></div>
                 </div>
             </div>
             <div class="gap-quote rv d4">
@@ -1389,22 +1213,10 @@
             <h2 class="rv d1">We Install the 7 Revenue Flows Your Store Is <span class="hl">Missing</span></h2>
             <div class="section-accent rv d1"></div>
             <div class="stats-grid rv d2">
-                <div class="stat-cell">
-                    <span class="stat-n" data-count="7">0</span>
-                    <span class="stat-l">Core Flows</span>
-                </div>
-                <div class="stat-cell">
-                    <span class="stat-n" data-count="21">0</span>
-                    <span class="stat-l">Days to First Revenue</span>
-                </div>
-                <div class="stat-cell">
-                    <span class="stat-n" data-count="35" data-sfx="%">0</span>
-                    <span class="stat-l">Email Revenue Target</span>
-                </div>
-                <div class="stat-cell">
-                    <span class="stat-n" data-count="100" data-sfx="%">0</span>
-                    <span class="stat-l">Measurable ROI</span>
-                </div>
+                <div class="stat-cell"><span class="stat-n" data-count="7">0</span><span class="stat-l">Core Flows</span></div>
+                <div class="stat-cell"><span class="stat-n" data-count="21">0</span><span class="stat-l">Days to First Revenue</span></div>
+                <div class="stat-cell"><span class="stat-n" data-count="35" data-sfx="%">0</span><span class="stat-l">Email Revenue Target</span></div>
+                <div class="stat-cell"><span class="stat-n" data-count="100" data-sfx="%">0</span><span class="stat-l">Measurable ROI</span></div>
             </div>
             <div class="flows rv d3">
                 <div class="flow-row"><span class="flow-dot"></span>Abandoned Cart Recovery</div>
@@ -1425,64 +1237,28 @@
             <h2 class="rv d1">4 Steps. 30 Days. Measurable Revenue.</h2>
             <div class="section-accent rv d1"></div>
             <div class="steps">
-                <div class="step rv d1">
-                    <div class="step-col">
-                        <div class="step-num">01</div>
-                        <div class="step-line"></div>
-                    </div>
-                    <div class="step-body">
-                        <h3>Audit</h3>
-                        <p>We analyze every flow, campaign, and revenue gap inside your Klaviyo account — nothing missed.</p>
-                    </div>
-                </div>
-                <div class="step rv d2">
-                    <div class="step-col">
-                        <div class="step-num">02</div>
-                        <div class="step-line"></div>
-                    </div>
-                    <div class="step-body">
-                        <h3>Diagnose</h3>
-                        <p>We put a real dollar figure on exactly what you're leaving behind. No guesswork, just numbers.</p>
-                    </div>
-                </div>
-                <div class="step rv d3">
-                    <div class="step-col">
-                        <div class="step-num">03</div>
-                        <div class="step-line"></div>
-                    </div>
-                    <div class="step-body">
-                        <h3>Build</h3>
-                        <p>We install your 7 core revenue flows — fully written, designed, tested, and live in your account.</p>
-                    </div>
-                </div>
-                <div class="step rv d4">
-                    <div class="step-col">
-                        <div class="step-num">04</div>
-                        <div class="step-line"></div>
-                    </div>
-                    <div class="step-body">
-                        <h3>Optimize</h3>
-                        <p>We test, scale, and report every dollar attributed to the system. Complete transparency, always.</p>
-                    </div>
-                </div>
+                <div class="step rv d1"><div class="step-col"><div class="step-num">01</div><div class="step-line"></div></div><div class="step-body"><h3>Audit</h3><p>We analyze every flow, campaign, and revenue gap inside your Klaviyo account — nothing missed.</p></div></div>
+                <div class="step rv d2"><div class="step-col"><div class="step-num">02</div><div class="step-line"></div></div><div class="step-body"><h3>Diagnose</h3><p>We put a real dollar figure on exactly what you're leaving behind. No guesswork, just numbers.</p></div></div>
+                <div class="step rv d3"><div class="step-col"><div class="step-num">03</div><div class="step-line"></div></div><div class="step-body"><h3>Build</h3><p>We install your 7 core revenue flows — fully written, designed, tested, and live in your account.</p></div></div>
+                <div class="step rv d4"><div class="step-col"><div class="step-num">04</div><div class="step-line"></div></div><div class="step-body"><h3>Optimize</h3><p>We test, scale, and report every dollar attributed to the system. Complete transparency, always.</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ══ BOOK US ══ -->
+    <!-- ══ DISCOVERY CALL (EXTERNAL LINK) ══ -->
     <section id="book">
         <div class="wrap">
             <div class="book-card rv">
                 <span class="label" style="display:block;text-align:center;">Get Started</span>
-                <h2>Get Your Free Email Revenue Audit</h2>
-                <p>We'll find exactly where your email channel is leaking revenue and show you the specific systems to recover it. No pitch. No fluff. Just your numbers.</p>
-                <button class="btn-prime" id="bookBtn" aria-label="Book your free revenue audit">
+                <h2>Book Your 20‑Minute Discovery Call</h2>
+                <p>We'll uncover exactly where your email channel is leaking revenue and map out the specific systems to recover it. No pitch. No fluff. Just a focused conversation about your brand's untapped potential.</p>
+                <a href="https://calendly.com/retentionops/discovery-call" target="_blank" rel="noopener" class="btn-prime">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    Book Your Free Revenue Audit
-                </button>
-                <div class="scarcity">
+                    Schedule Your Call
+                </a>
+                <div class="calendly-note">
                     <span class="sc-dot"></span>
-                    <span id="scarcityTxt">Checking availability...</span>
+                    <span>takes less than 30 seconds</span>
                 </div>
             </div>
         </div>
@@ -1493,23 +1269,23 @@
         <div class="foot-logo">
             <img src="logo.jpg" alt="RetentionOps logo" width="120" height="32" loading="lazy" />
         </div>
-        <p class="foot-email"><a href="mailto:dot@retention-ops.com">Contact Our Team</a></p>
+        <div class="foot-contact">
+            <a href="mailto:dot@retention-ops.com">Email</a>
+            <span aria-hidden="true">|</span>
+            <a href="tel:+18329892991">Phone</a>
+        </div>
         <p class="foot-credit">© 2026 RetentionOps &nbsp;·&nbsp; Made with love by <a href="https://emltechstudio.site" target="_blank" rel="noopener">EML Tech Studio</a></p>
     </footer>
 
-    <!-- ══ MODAL ══ -->
+    <!-- ══ MODAL (AUDIT FORM) ══ -->
     <div class="modal-bg" id="modalBg">
         <div class="modal" id="modalContent">
             <div class="modal-handle"></div>
-
-            <!-- Form fields -->
             <div class="form-fields-wrap" id="formFieldsWrap">
                 <h3>Get Your Free Audit</h3>
                 <p class="modal-sub">Tell us about your brand. We'll get back to you within 24 hours.</p>
                 <form id="auditForm" action="https://formspree.io/f/mkokedaw" method="POST">
-                    <!-- Honeypot for spam protection -->
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-
                     <div class="field">
                         <label for="fullName">FULL NAME</label>
                         <input type="text" id="fullName" name="name" placeholder="e.g. James Adeyemi" required autocomplete="name" />
@@ -1520,16 +1296,17 @@
                     </div>
                     <div class="field">
                         <label for="brandUrl">BRAND / STORE URL</label>
-                        <input type="url" id="brandUrl" name="brand_url" placeholder="e.g. lumiskin.com or lumiskin.myshopify.com" required autocomplete="url" />
+                        <input type="url" id="brandUrl" name="brand_url" placeholder="e.g. lumiskin.com" required autocomplete="url" />
                     </div>
                     <div class="field">
                         <label for="monthlyRevenue">MONTHLY REVENUE (APPROX.)</label>
                         <select id="monthlyRevenue" name="monthly_revenue" required>
                             <option value="">Select a range</option>
-                            <option value="under-5k">Under $5K / month</option>
-                            <option value="5k-20k">$5K – $20K / month</option>
-                            <option value="20k-100k">$20K – $100K / month</option>
-                            <option value="over-100k">Over $100K / month</option>
+                            <option value="under-50k">Under $50K / month</option>
+                            <option value="50k-250k">$50K – $250K / month</option>
+                            <option value="250k-500k">$250K – $500K / month</option>
+                            <option value="500k-1m"> $500K -$1m / month</option>
+                            <option value="over-1m"> Over $1m / month</option>
                         </select>
                     </div>
                     <div class="field">
@@ -1560,8 +1337,6 @@
                     <p class="form-footnote">No spam. No obligation. Just actionable insights.</p>
                 </form>
             </div>
-
-            <!-- Success state -->
             <div class="form-success" id="formSuccess">
                 <div class="success-icon">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -1573,34 +1348,6 @@
     </div>
 
     <script>
-        /* ── Theme ── */
-        const html = document.documentElement;
-        const themeBtn = document.getElementById('themeBtn');
-        const sunIco = document.getElementById('sunIco');
-        const moonIco = document.getElementById('moonIco');
-        const setThemeUI = (dark) => {
-            sunIco.style.display = dark ? 'block' : 'none';
-            moonIco.style.display = dark ? 'none' : 'block';
-        };
-        themeBtn.addEventListener('click', () => {
-            const dark = html.dataset.theme === 'dark';
-            html.dataset.theme = dark ? 'light' : 'dark';
-            setThemeUI(!dark);
-            try { localStorage.setItem('theme', !dark ? 'light' : 'dark'); } catch (e) {}
-        });
-        // Load saved theme
-        try {
-            const saved = localStorage.getItem('theme');
-            if (saved === 'light') {
-                html.dataset.theme = 'light';
-                setThemeUI(false);
-            } else {
-                setThemeUI(true);
-            }
-        } catch (e) {
-            setThemeUI(html.dataset.theme === 'dark');
-        }
-
         /* ── Nav scroll ── */
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -1639,7 +1386,6 @@
         const openModal = () => {
             modalBg.classList.add('open');
             document.body.style.overflow = 'hidden';
-            // Reset to form view if previously submitted
             formFieldsWrap.classList.remove('hidden');
             formSuccess.classList.remove('show');
             auditForm.reset();
@@ -1659,10 +1405,7 @@
         };
 
         document.getElementById('heroBtn').addEventListener('click', openModal);
-        document.getElementById('bookBtn').addEventListener('click', openModal);
         modalBg.addEventListener('click', e => { if (e.target === modalBg) closeModal(); });
-
-        // Close modal with Escape key
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape' && modalBg.classList.contains('open')) closeModal();
         });
@@ -1686,42 +1429,31 @@
         /* ── Formspree AJAX submission ── */
         auditForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-
-            // If "Other" is selected but not filled
             if (emailPlatformSelect.value === 'other' && !otherPlatformInput.value.trim()) {
                 otherPlatformInput.focus();
                 otherPlatformInput.style.borderColor = '#e74c3c';
                 setTimeout(() => { otherPlatformInput.style.borderColor = ''; }, 1500);
                 return;
             }
-
             const submitBtn = document.getElementById('submitBtn');
             const origHTML = submitBtn.innerHTML;
             submitBtn.innerHTML = '<span style="display:flex;align-items:center;gap:0.5rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="animation: spin 0.8s linear infinite;"><circle cx="12" cy="12" r="10" stroke-dasharray="32 32"/></svg> Submitting...</span>';
             submitBtn.style.pointerEvents = 'none';
             submitBtn.style.opacity = '0.8';
-
             try {
                 const formData = new FormData(auditForm);
-                const response = await fetch('https://formspree.io/f/mkokedaw', {
+                const response = await fetch('https://formspree.io/f/xpqkeqqn', {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
-
                 if (response.ok) {
-                    // Show success
                     formFieldsWrap.classList.add('hidden');
                     formSuccess.classList.add('show');
                     submitBtn.innerHTML = origHTML;
                     submitBtn.style.pointerEvents = '';
                     submitBtn.style.opacity = '';
-                    // Auto-close after 5 seconds
-                    setTimeout(() => {
-                        if (modalBg.classList.contains('open')) closeModal();
-                    }, 5000);
+                    setTimeout(() => { if (modalBg.classList.contains('open')) closeModal(); }, 5000);
                 } else {
                     throw new Error('Form submission failed');
                 }
@@ -1730,7 +1462,6 @@
                 submitBtn.innerHTML = origHTML;
                 submitBtn.style.pointerEvents = '';
                 submitBtn.style.opacity = '';
-                // Show error feedback
                 submitBtn.style.background = '#c0392b';
                 submitBtn.style.color = '#fff';
                 submitBtn.innerHTML = '⚠️ Error — Please try again';
@@ -1742,7 +1473,6 @@
             }
         });
 
-        // Add spin keyframe dynamically
         const spinStyle = document.createElement('style');
         spinStyle.textContent = '@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}';
         document.head.appendChild(spinStyle);
@@ -1779,12 +1509,6 @@
         }, { threshold: 0.35 });
         const grid = document.querySelector('.stats-grid');
         if (grid) countObs.observe(grid);
-
-        /* ── Scarcity live feel ── */
-        setTimeout(() => {
-            const el = document.getElementById('scarcityTxt');
-            if (el) el.textContent = 'few spots remaining this month';
-        }, 2400);
     </script>
 </body>
 </html>
